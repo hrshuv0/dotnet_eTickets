@@ -6,12 +6,14 @@ namespace eTickets.Models
     public class Actor
     {
         [Key]
-        public int ActorId { get; set; }
+        public int Id { get; set; }
         
         [Display(Name = "Profile Picture")]
         public string ProfilePictureUrl { get; set; }
         
         [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "Full Name is required")]
+        [StringLength(30, MinimumLength = 3, ErrorMessage = "Name length must be at least 3 ")]
         public string FullName { get; set; }
         
         [Display(Name = "Biography")]
