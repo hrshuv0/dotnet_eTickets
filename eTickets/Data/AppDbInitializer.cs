@@ -25,33 +25,39 @@ namespace eTickets.Data
                     {
                         new Cinema()
                         {
-                            Name = "Cinema 1",
-                            Logo = "http://dotnetbow.net/images/cinemas/cinema-1.jpeg",
-                            Description = "This is the description of first cinema"
+                            Name = "Netflix",
+                            Logo = "img/Cinemas/Netflix.jpg",
+                            Description = "Netflix, Inc. is an American subscription streaming service and production company." +
+                                          " Launched on August 29, 1997, it offers a library of films and television series " +
+                                          "through distribution deals as well as its own productions, known as Netflix Originals"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 2",
-                            Logo = "http://dotnetbow.net/images/cinemas/cinema-2.jpeg",
-                            Description = "This is the description of first cinema"
+                            Name = "The Walt Disney Company",
+                            Logo = "img/Cinemas/Disney.jpg",
+                            Description = "The Walt Disney Company, commonly just Disney, is an American multinational " +
+                                          "entertainment and media conglomerate headquartered at the Walt Disney Studios complex in Burbank, California"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 3",
-                            Logo = "http://dotnetbow.net/images/cinemas/cinema-3.jpeg",
-                            Description = "This is the description of first cinema"
+                            Name = "DC",
+                            Logo = "img/Cinemas/DC.jpg",
+                            Description = "Detective Comics, Inc. (which would help inspire the abbreviation DC) was formed, " +
+                                          "with Wheeler-Nicholson and Jack S. Liebowitz, Donenfeld's accountant, listed as owners"
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 4",
-                            Logo = "http://dotnetbow.net/images/cinemas/cinema-4.jpeg",
-                            Description = "This is the description of first cinema"
+                            Name = "Paramount Pictures",
+                            Logo = "img/Cinemas/Paramount Pictures.jpg",
+                            Description = "Paramount Pictures Corporation is an American film and television production " +
+                                          "and distribution company and a subsidiary of ViacomCBS."
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 5",
-                            Logo = "http://dotnetbow.net/images/cinemas/cinema-5.jpeg",
-                            Description = "This is the description of first cinema"
+                            Name = "Marvel",
+                            Logo = "img/Cinemas/Marvel.jpg",
+                            Description = "Marvel Entertainment, LLC is an American entertainment company founded in June 1998 " +
+                                          "and based in New York City, New York formed by the merger of Marvel Entertainment Group and ToyBiz."
                         },
                     });
                     context.SaveChanges();
@@ -64,27 +70,34 @@ namespace eTickets.Data
                     {
                         new Actor()
                         {
-                            FullName = "Actor 1",
-                            Bio = "This is Bio of the 1st actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/actors/actors-1.jpeg"
+                            FullName = "Will Smith",
+                            Bio = "Willard Carroll Smith II, also known by his stage name The Fresh Prince, " +
+                                  "is an American actor, rapper, and film producer.",
+                            ProfilePictureUrl = "img/Actors/Will Smith.jpg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 1",
-                            Bio = "This is Bio of the 2nd actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/actors/actors-2.jpeg"
+                            FullName = "Tom Cruise",
+                            Bio = "Thomas Cruise Mapother IV is an American actor and producer. " +
+                                  "One of the world's highest-paid actors, he has received various accolades throughout his career, " +
+                                  "including three Golden Globe Awards, in addition to nominations " +
+                                  "for a British Academy Film Award and three Academy Awards.",
+                            ProfilePictureUrl = "img/Actors/Tom Cruise.jpg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 1",
-                            Bio = "This is Bio of the 3rd actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/actors/actors-3.jpeg"
+                            FullName = "Chris Hemsworth",
+                            Bio = "Christopher \"Chris\" Hemsworth AM is an Australian actor. He rose to prominence playing Kim Hyde in the Australian television series Home and Away before beginning a film career in Hollywood.",
+                            ProfilePictureUrl = "img/Actors/Chris Hemsworth.jpg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 1",
-                            Bio = "This is Bio of the 4th actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/actors/actors-4.jpeg"
+                            FullName = "Leonardo Dicaprio",
+                            Bio = "Leonardo Wilhelm DiCaprio is an American actor and film producer." +
+                                  "Known for his work in biopics and period films, " +
+                                  "DiCaprio is the recipient of numerous accolades, including an Academy Award, " +
+                                  "a British Academy Film Award, and three Golden Globe",
+                            ProfilePictureUrl = "img/Actors/Leonardo Dicaprio.jpg"
                         },
                     });
                     context.SaveChanges();
@@ -97,27 +110,35 @@ namespace eTickets.Data
                     {
                         new Producer()
                         {
-                            FullName = "Producer 1",
-                            Bio = "This is Bio of the 1st actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/producers/producer-1.jpeg"
+                            FullName = "Jerry Bruckheimer",
+                            Bio = "Jerome Leon Bruckheimer is an American film and television producer. " +
+                                  "He has been active in the genres of action, drama, fantasy, and science fiction.",
+                            ProfilePictureUrl = "img/Producers/Jerry Bruckheimer.jpg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 2",
-                            Bio = "This is Bio of the 2nd actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/producers/producer-2.jpeg"
+                            FullName = "James Cameron",
+                            Bio = "James Francis Cameron CC is a Canadian filmmaker. Best known for making science fiction and epic films," +
+                                  " he first gained recognition for directing The Terminator. " +
+                                  "He found further success with Aliens, The Abyss, Terminator 2: Judgment Day, and the action comedy True Lies.",
+                            ProfilePictureUrl = "img/Producers/James Cameron.jpg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 3",
-                            Bio = "This is Bio of the 3rd actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/producers/producer-3.jpeg"
+                            FullName = "Christopher Nolan",
+                            Bio = "Christopher Edward Nolan CBE is a British-American film director, " +
+                                  "producer, and screenwriter. His films have grossed more than US$5 billion worldwide, " +
+                                  "and have garnered 11 Academy Awards from 36 nominations. Born and raised in London, " +
+                                  "Nolan developed an interest in filmmaking from a young age",
+                            ProfilePictureUrl = "img/Producers/Christopher Nolan.jpg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 4",
-                            Bio = "This is Bio of the 4th actor",
-                            ProfilePictureUrl = "http://dotnetbow.net/images/producers/producer-4.jpeg"
+                            FullName = "Kathleen Kennedy",
+                            Bio = "Kathleen Kennedy is an American film producer and current president of Lucasfilm. " +
+                                  "In 1981, she co-founded the production company Amblin Entertainment with Steven Spielberg and Frank Marshall. " +
+                                  "Her first film as a producer was E.T. the Extra-Terrestrial.",
+                            ProfilePictureUrl = "img/Producers/Kathleen Kennedy.jpg"
                         },
                     });
                     context.SaveChanges();
@@ -130,39 +151,53 @@ namespace eTickets.Data
                     {
                         new Movie()
                         {
-                            Name = "Life",
-                            Description = "This is Life Movie description",
+                            Name = "Titanic",
+                            Description = "This is Titanic Movie description",
                             Price = 39.50,
-                            ImageUrl = "http://dotnethow.net/images/movies/movie-3.jpeg",
-                            StartDate = DateTime.Now.AddDays(-10),
+                            ImageUrl = "img/Movies/Titanic.jpg",
+                            StartDate = DateTime.Now.AddDays(-100),
                             EndDate = DateTime.Now.AddDays(10),
-                            CinemaId = 3,
+                            CinemaId = 4,
                             ProducerId = 3,
-                            MovieCategory = MovieCategory.Documentary
+                            MovieCategory = MovieCategory.Romance
                         },
                         new Movie()
                         {
-                            Name = "Ghost",
-                            Description = "This is Ghost Movie description",
+                            Name = "Avater 2",
+                            Description = "This is Avater 2 Movie description",
+                            Price = 39.50,
+                            ImageUrl = "img/Movies/Avater 2.jpg",
+                            StartDate = DateTime.Now.AddDays(6),
+                            EndDate = DateTime.Now.AddDays(25),
+                            CinemaId = 4,
+                            ProducerId = 3,
+                            MovieCategory = MovieCategory.Romance
+                        },
+                        new Movie()
+                        {
+                            Name = "Ice Age",
+                            Description = "Buck, Crash, and Eddy try to keep the Lost World from being overtaken by dinosaurs, " +
+                                          "as they set out to find a place of their own",
                             Price = 30.50,
-                            ImageUrl = "http://dotnethow.net/images/movies/movie-4.jpeg",
-                            StartDate = DateTime.Now,
-                            EndDate = DateTime.Now.AddDays(7),
+                            ImageUrl = "img/Movies/Ice Age.jpg",
+                            StartDate = DateTime.Now.AddDays(-513),
+                            EndDate = DateTime.Now.AddDays(-412),
                             CinemaId = 4,
                             ProducerId = 4,
-                            MovieCategory = MovieCategory.Horror
+                            MovieCategory = MovieCategory.Cartoon
                         },
                         new Movie()
                         {
-                            Name = "The Shawshank Redumption",
-                            Description = "This is The Shawshank Redumption Movie description",
-                            Price = 29.50,
-                            ImageUrl = "http://dotnethow.net/images/movies/movie-1.jpeg",
-                            StartDate = DateTime.Now.AddDays(2),
-                            EndDate = DateTime.Now.AddDays(10),
+                            Name = "Spider-Man: No Way Home",
+                            Description = "With Spider-Man's identity now revealed, our friendly neighborhood web-slinger is unmasked " +
+                                          "and no longer able to separate his normal life as Peter Parker from the high stakes of being a superhero",
+                            Price = 117.50,
+                            ImageUrl = "img/Movies/Spider-Man: No Way Home.jpg",
+                            StartDate = DateTime.Now.AddDays(-56),
+                            EndDate = DateTime.Now.AddDays(25),
                             CinemaId = 1,
                             ProducerId = 1,
-                            MovieCategory = MovieCategory.Documentary
+                            MovieCategory = MovieCategory.Action
                         },
                     });
                     context.SaveChanges();
