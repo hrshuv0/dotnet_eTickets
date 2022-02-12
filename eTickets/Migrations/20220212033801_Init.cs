@@ -8,6 +8,11 @@ namespace eTickets.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "ActorId",
+                table: "Producers",
+                newName: "Id");
+
+            migrationBuilder.RenameColumn(
+                name: "ActorId",
                 table: "Actors",
                 newName: "Id");
 
@@ -25,6 +30,11 @@ namespace eTickets.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.RenameColumn(
+                name: "Id",
+                table: "Producers",
+                newName: "ActorId");
+
             migrationBuilder.RenameColumn(
                 name: "Id",
                 table: "Actors",
