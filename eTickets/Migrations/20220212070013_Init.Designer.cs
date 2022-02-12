@@ -10,7 +10,7 @@ using eTickets.Data;
 namespace eTickets.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220212045254_Init")]
+    [Migration("20220212070013_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,6 +73,7 @@ namespace eTickets.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
