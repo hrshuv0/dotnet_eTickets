@@ -13,7 +13,7 @@ namespace eTickets.Data.Base
         {
             _context = context;
         }
-
+        
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {

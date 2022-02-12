@@ -18,6 +18,16 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "FullName",
+                table: "Producers",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "FullName",
                 table: "Actors",
                 type: "nvarchar(30)",
                 maxLength: 30,
@@ -39,6 +49,14 @@ namespace eTickets.Migrations
                 name: "Id",
                 table: "Actors",
                 newName: "ActorId");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "FullName",
+                table: "Producers",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
 
             migrationBuilder.AlterColumn<string>(
                 name: "FullName",
