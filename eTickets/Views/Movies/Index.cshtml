@@ -29,10 +29,10 @@
                 <div class="col-md-6">
                     <div class="card-body">
                         <p class="card-text overflow-auto" style="height: 120px">@item.Description</p>
-                        <p class="card-text" style="min-height: 30px"><b>Cinema:</b>@item.Cinema.Name</p>
+                        <p class="card-text" style="height: 30px"><b>Cinema:</b>@item.Cinema.Name</p>
                         <p class="card-text"><b>Category:</b>@item.MovieCategory</p>
-                        <p class="card-text"><b>Start Date:</b>@item.StartDate.ToString("dd MMM yy")</p>
-                        <p class="card-text"><b>End Date:</b>@item.EndDate.ToString("dd MMM yy")</p>
+                        <p class="card-text" style="height: 20px"><b>Start Date:</b>@item.StartDate.ToString("dd MMM yy")</p>
+                        <p class="card-text" style="height: 20px"><b>End Date:</b>@item.EndDate.ToString("dd MMM yy")</p>
                         <p class="card-text">
                             <b>Status:</b>
                             @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
