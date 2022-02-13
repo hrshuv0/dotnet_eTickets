@@ -63,6 +63,64 @@ namespace eTickets.Controllers
             await _service.AddNewMovieAsync(movie);
             return RedirectToAction(nameof(Index));
         }
+        
+        
+        //Get: Movies/Edit/1
+        public async Task<IActionResult> Edit(int id)
+        {
+            var movieDetails = await _service.GetMovieByIdAsync(id);
+
+            if (movieDetails is null)
+            {
+                return NotFound();
+            }
+
+            var response = new NewMovieVM()
+            {
+                Id            = movieDetails.Id,
+                Name          = movieDetails.Name,
+                Description   = movieDetails.Description,
+                Price         = movieDetails.Price,
+                ImageUrl      = movieDetails.ImageUrl,
+                MovieCategory = movieDetails.MovieCategory,
+                StartDate     = movieDetails.StartDate,
+                EndDate       = movieDetails.EndDate,
+                CinemaId      = movieDetails.CinemaId,
+                ProducerId    = movieDetails.ProducerId,
+                ActorIds      = movieDetails.ActorsMovies.Select(n => n.ActorId).ToList(),
+            };
+            
+            var movieDropdownData = await _service.GetNewMovieDropdownValues();
+
+            ViewBag.Cinemas   = new SelectList(movieDropdownData.Cinemas,   "Id", "Name");
+            ViewBag.Producers = new SelectList(movieDropdownData.Producers, "Id", "FullName");
+            ViewBag.Actors    = new SelectList(movieDropdownData.Actors,    "Id", "FullName");
+            
+            return View(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, NewMovieVM movie)
+        {
+            if (id != movie.Id)
+            {
+                return NotFound();
+            }
+            
+            if (!ModelState.IsValid)
+            {
+                var movieDropdownData = await _service.GetNewMovieDropdownValues();
+
+                ViewBag.Cinemas   = new SelectList(movieDropdownData.Cinemas,   "Id", "Name");
+                ViewBag.Producers = new SelectList(movieDropdownData.Producers, "Id", "FullName");
+                ViewBag.Actors    = new SelectList(movieDropdownData.Actors,    "Id", "FullName");
+
+                return View(movie);
+            }
+
+            await _service.UpdateMovieAsync(movie);
+            return RedirectToAction(nameof(Index));
+        }
 
 
     }
