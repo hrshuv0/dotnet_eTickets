@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using eTickets.Models;
 using eTickets.Models.Shopping;
 using Microsoft.AspNetCore.Http;
@@ -100,7 +101,16 @@ namespace eTickets.Data.Cart
             return total;
         }
 
+        public async Task ClearShoppingCartAsync()
+        {
+            var items = await _context.ShoppingCartItems
+                .Where(n => n.ShoppingCartId == ShoppingCartId).ToListAsync();
+            _context.ShoppingCartItems.RemoveRange(items);
 
-        
+            await _context.SaveChangesAsync();
+        }
+
+
+
     }
 }
