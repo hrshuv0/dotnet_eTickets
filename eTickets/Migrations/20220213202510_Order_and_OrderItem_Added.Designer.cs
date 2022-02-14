@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eTickets.Data;
 
 namespace eTickets.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220213202510_Order_and_OrderItem_Added")]
+    partial class Order_and_OrderItem_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,29 +124,7 @@ namespace eTickets.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Bio")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProfilePictureUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Producers");
-                });
-
-            modelBuilder.Entity("eTickets.Models.Shopping.Order", b =>
+            modelBuilder.Entity("eTickets.Models.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -162,7 +142,7 @@ namespace eTickets.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Shopping.OrderItem", b =>
+            modelBuilder.Entity("eTickets.Models.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -190,27 +170,26 @@ namespace eTickets.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Shopping.ShoppingCartItem", b =>
+            modelBuilder.Entity("eTickets.Models.Producer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ShoppingCartId")
+                    b.Property<string>("ProfilePictureUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("Producers");
                 });
 
             modelBuilder.Entity("eTickets.Models.ActorMovie", b =>
@@ -251,7 +230,7 @@ namespace eTickets.Migrations
                     b.Navigation("Producer");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Shopping.OrderItem", b =>
+            modelBuilder.Entity("eTickets.Models.OrderItem", b =>
                 {
                     b.HasOne("eTickets.Models.Movie", "Movie")
                         .WithMany()
@@ -259,7 +238,7 @@ namespace eTickets.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Shopping.Order", "Order")
+                    b.HasOne("eTickets.Models.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -268,15 +247,6 @@ namespace eTickets.Migrations
                     b.Navigation("Movie");
 
                     b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("eTickets.Models.Shopping.ShoppingCartItem", b =>
-                {
-                    b.HasOne("eTickets.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieId");
-
-                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("eTickets.Models.Actor", b =>
@@ -294,14 +264,14 @@ namespace eTickets.Migrations
                     b.Navigation("ActorsMovies");
                 });
 
+            modelBuilder.Entity("eTickets.Models.Order", b =>
+                {
+                    b.Navigation("OrderItems");
+                });
+
             modelBuilder.Entity("eTickets.Models.Producer", b =>
                 {
                     b.Navigation("Movies");
-                });
-
-            modelBuilder.Entity("eTickets.Models.Shopping.Order", b =>
-                {
-                    b.Navigation("OrderItems");
                 });
 #pragma warning restore 612, 618
         }
