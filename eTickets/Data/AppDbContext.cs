@@ -46,10 +46,7 @@ namespace eTickets.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        
-        
-        
-        
-        
     }
 }
+
+// "DefaultConnectionString" : "Server=tcp:hrshuvo-etickets.database.windows.net,1433;Initial Catalog=etickets-app-db;Persist Security Info=False;User ID=etickets-admin;Password=shuvo123#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
