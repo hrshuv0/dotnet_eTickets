@@ -17,7 +17,11 @@
                 <th>Order Id</th>
                 <th>Items</th>
                 <th>Total</th>
-                <th>User</th>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <th>User</th>
+                }
+                
             </tr>
             </thead>
             <tbody>
@@ -33,7 +37,7 @@
                                     <div class="alert alert-info" role="alert">
                                         <span class="badge bg-success">@item.Amount </span>
                                         [@item.Price.ToString("c")] - @item.Movie.Name
-                                    </div>
+                                    </div> 
                                 </li>
                             }
                         </ul>
@@ -41,7 +45,12 @@
                     <td class="align-middle">
                         @order.OrderItems.Select(m => m.Movie.Price * m.Amount).Sum().ToString("c")
                     </td>
-                    <td class="align-middle"> - </td>
+                    
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <td class="align-middle"> @order.User.FullName </td>
+                    }
+                    
                 </tr>
             }
             </tbody>

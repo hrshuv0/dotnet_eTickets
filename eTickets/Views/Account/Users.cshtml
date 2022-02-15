@@ -1,0 +1,52 @@
+@model IEnumerable<ApplicationUser>
+
+@{
+    ViewData["Title"] = "List of all Users";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <p>
+            <h4>List of all users</h4>
+        </p>
+
+        <table class="table">
+            <thead>
+            <tr class="text-center">
+                <th class="align-middle">@Html.DisplayNameFor(model => model.FullName)</th>
+                <th class="align-middle">@Html.DisplayNameFor(model => model.UserName)</th>
+                <th class="align-middle col-5">@Html.DisplayNameFor(model => model.Email)</th>
+
+                @* <th>ProfilePictureUrl</th> *@
+                @* <th>Full Name</th> *@
+                @* <th>Bio</th> *@
+
+
+
+
+            </tr>
+
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td class="align-middle border-bottom">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td class="align-middle border-bottom">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@await Html.PartialAsync("_CreateItem", "Actors")
